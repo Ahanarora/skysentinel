@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Design tokens
+   Brand green and navy are taken from the ProMind 360 logo
+   (public/assets/promind-360-logo.svg). Everything else is a neutral,
+   restrained system so the brand can be adjusted here without touching
+   components.
+   TODO(brand): confirm typography and the full palette with a brand guide.
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --brand-700: #075232;
+  --brand-600: #096a3f;
+  --brand-500: #0b804c; /* logo green */
+  --brand-navy: #01284a; /* logo navy */
+  --brand-300: #52c08b; /* on dark */
+  --brand-100: #dcefe4;
+  --brand-50: #eef7f1;
+
+  /* Neutrals: ink (dark surfaces) */
+  --ink-950: #081013;
+  --ink-900: #0b1519;
+  --ink-850: #0f1c21;
+  --ink-800: #13232a;
+  --ink-700: #1d3039;
+  --ink-600: #2a3f48;
+
+  /* Neutrals: paper (light surfaces) */
+  --paper: #ffffff;
+  --paper-2: #f4f6f4;
+  --paper-3: #e9ede9;
+
+  /* Text */
+  --text: #0d1a1f;
+  --text-2: #43525a;
+  --text-3: #66757c;
+  --text-on-dark: #eef3f1;
+  --text-on-dark-2: #a9b8b6;
+  --text-on-dark-3: #7c8d8c;
+
+  /* Lines */
+  --line: #dde3df;
+  --line-strong: #c6cfca;
+  --line-dark: rgb(255 255 255 / 0.09);
+  --line-dark-strong: rgb(255 255 255 / 0.16);
+
+  /* Detection source. Paired with icon + label, never colour alone.
+     Human = annotation (dashed, rounded). AI = detection box (corner brackets). */
+  --human: #6d4fe0;
+  --human-soft: #efebff;
+  --human-on-dark: #a894ff;
+  --ai: #0b7fa6;
+  --ai-soft: #e2f4fa;
+  --ai-on-dark: #4cc4ec;
+
+  /* Severity (levels as used in the existing Promind app). Icon + label always. */
+  --sev-critical: #c9302c;
+  --sev-critical-soft: #fdecea;
+  --sev-critical-on-dark: #ff7b72;
+  --sev-semi: #b5530f;
+  --sev-semi-soft: #fff1e4;
+  --sev-semi-on-dark: #f5a15d;
+  --sev-general: #56656d;
+  --sev-general-soft: #eef1f2;
+  --sev-general-on-dark: #b3c0c6;
+
+  /* CCTV simulation */
+  --cctv-s0: #0d1417;
+  --cctv-s1: #172226;
+  --cctv-s2: #1f2c31;
+  --cctv-s3: #2c3b41;
+  --cctv-line: #3f5058;
+  --cctv-light: #b9c6bd;
+  --cctv-person: #7d8f95;
+
+  /* Draft markers */
+  --todo: #9a6700;
+  --todo-soft: #fff6d6;
+  --todo-line: #e3b341;
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-display: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+  --fs-h1: clamp(2.25rem, 1.6rem + 2.6vw, 3.75rem);
+  --fs-h2: clamp(1.875rem, 1.4rem + 1.9vw, 3rem);
+  --fs-h3: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
+  --fs-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.75rem;
+  --fs-micro: 0.6875rem;
+
+  --lh-tight: 1.06;
+  --lh-snug: 1.25;
+  --lh-body: 1.6;
+
+  --tracking-tight: -0.035em;
+  --tracking-snug: -0.02em;
+  --tracking-caps: 0.08em;
+
+  /* Space & layout */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-y: clamp(4.5rem, 3rem + 6vw, 8.5rem);
+  --container: 1240px;
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --header-h: 80px;
+
+  /* Shape & depth */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --shadow-sm: 0 1px 2px rgb(13 26 31 / 0.06), 0 1px 1px rgb(13 26 31 / 0.04);
+  --shadow: 0 12px 32px -12px rgb(13 26 31 / 0.18), 0 2px 6px rgb(13 26 31 / 0.05);
+  --shadow-lg: 0 40px 80px -30px rgb(8 16 19 / 0.45), 0 12px 24px -12px rgb(8 16 19 / 0.25);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 240ms;
+  --dur-slow: 600ms;
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# TODO(launch): add "Sitemap: https://<domain>/sitemap.xml" once site.url is set.

@@ -19,7 +19,10 @@ function logoStrip() {
   const logos = visible(p.logos);
   if (!logos.length) return "";
   return html`<div class="proof-logos">
-    <p class="proof-logos__label">Customers ${logos.some((l) => l.placeholder) && draftMarker({ placeholder: true })}</p>
+    <div class="proof-logos__head">
+      <p class="proof-logos__label">${p.logoLabel ?? "Customers"} ${logos.some((l) => l.placeholder) && draftMarker({ placeholder: true })}</p>
+      ${p.logoSource && html`<a href="${p.logoSource.href}" target="_blank" rel="noreferrer">${p.logoSource.label}</a>`}
+    </div>
     <ul class="logo-row">
       ${logos.map((l) =>
         l.src
@@ -53,7 +56,7 @@ function caseStudy() {
   if (!isVisible(c)) return "";
   return html`<article class="case">
     <header class="case__head">
-      <p class="eyebrow">Case study ${draftMarker(c)}</p>
+      ${draftMarker(c)}
       <h3 class="case__customer">${c.customer}</h3>
       <p class="case__context">${c.context}</p>
     </header>
@@ -68,7 +71,7 @@ export function proofSection() {
   const heading = proofHeading();
   return html`<section class="section proof-section" id="${p.id}" aria-labelledby="${p.id}-title">
     <div class="container">
-      ${sectionHead({ eyebrow: heading.eyebrow, headline: heading.headline, id: `${p.id}-title` })}
+      ${sectionHead({ headline: heading.headline, id: `${p.id}-title` })}
       ${logoStrip()} ${metrics()}
       <div class="proof-section__stories">${caseStudy()} ${testimonial()}</div>
     </div>

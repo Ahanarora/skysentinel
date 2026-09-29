@@ -50,7 +50,7 @@ function role(r) {
   const cases = visible(r.useCases);
   return html`<article class="role role--${r.key}">
     <p class="role__tag">${r.tag}</p>
-    <h3 class="role__name">${icon(r.key === "ai" ? "scan" : "headset", { size: 22 })}<span>${r.label}</span><span class="role__eq" aria-hidden="true">=</span></h3>
+    <h3 class="role__name">${icon(r.key === "ai" ? "scan" : "headset", { size: 22 })}<span>${r.label}</span><span class="role__arrow" aria-hidden="true">→</span></h3>
     <p class="role__does">${r.does}</p>
     ${cases.length > 0 &&
     html`<ul class="role__cases">
@@ -65,7 +65,7 @@ export function monitoringWallSection() {
 
   return html`<section class="section section--dark wall-section" id="${whatItSees.id}" aria-labelledby="${whatItSees.id}-title">
     <div class="container">
-      ${sectionHead({ eyebrow: whatItSees.eyebrow, headline: whatItSees.headline, body: whatItSees.body, id: `${whatItSees.id}-title` })}
+      ${sectionHead({ headline: whatItSees.headline, body: whatItSees.body, id: `${whatItSees.id}-title` })}
       <div class="roles">${whatItSees.roles.map(role)}</div>
       ${whatItSees.casesNote && html`<p class="roles__note">${whatItSees.casesNote}</p>`}
 

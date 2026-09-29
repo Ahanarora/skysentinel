@@ -27,7 +27,6 @@ export function render(assets) {
     content: html`<section class="section demo-page">
       <div class="container demo-page__grid">
         <div class="demo-page__intro">
-          <p class="eyebrow">${site.primaryCta.label}</p>
           <h1 class="demo-page__title">See Promind 360 on your operations.</h1>
           <p class="demo-page__lead">Tell us about your sites. We’ll show you how monitoring, detection and incident tracking would work across them.</p>
           <ul class="demo-page__list">

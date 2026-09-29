@@ -13,7 +13,7 @@ export function button({ label, href, variant = "primary", size, track, iconAfte
 export const demoButton = ({ track, variant = "primary", size, className } = {}) =>
   button({ ...site.primaryCta, variant, size, track: `book-demo:${track}`, iconAfter: "arrowRight", className });
 
-export function sectionHead({ eyebrow, headline, body, align = "start", headingLevel = 2, id, className }) {
+export function sectionHead({ headline, body, align = "start", headingLevel = 2, id, className }) {
   const lines = Array.isArray(headline) ? headline : [headline];
   const heading = lines.map((line, i) => html`${i > 0 && html`<br />`}<span>${line}</span>`);
   const h =
@@ -21,7 +21,6 @@ export function sectionHead({ eyebrow, headline, body, align = "start", headingL
       ? html`<h1 class="section-head__title"${attr("id", id)}>${heading}</h1>`
       : html`<h2 class="section-head__title"${attr("id", id)}>${heading}</h2>`;
   return html`<header class="${cx("section-head", `section-head--${align}`, className)}">
-    ${eyebrow && html`<p class="eyebrow">${eyebrow}</p>`}
     ${h}
     ${body && html`<p class="section-head__body">${body}</p>`}
   </header>`;
@@ -59,8 +58,10 @@ export function severityBadge(key) {
   return html`<span class="${cx("sev", `sev--${key}`)}">${icon(SEVERITY_ICON[key], { size: 13 })}<span>${meta.label}</span></span>`;
 }
 
-export const statusLabel = (status) =>
-  html`<span class="${cx("status", `status--${String(status).toLowerCase()}`)}">${status}</span>`;
+export const statusLabel = (status) => {
+  if (["assigned", "escalated"].includes(String(status).toLowerCase())) return "";
+  return html`<span class="${cx("status", `status--${String(status).toLowerCase()}`)}">${status}</span>`;
+};
 
 /** Resolve an incident/event record against the approved event types. */
 export function resolveEvent(event) {

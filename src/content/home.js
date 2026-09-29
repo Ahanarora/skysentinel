@@ -17,7 +17,6 @@
 //   "human" for the operator-led service.
 
 export const hero = {
-  eyebrow: "24×7 Surveillance Centre · Incident platform · Operational analytics",
   headline: "Turn your CCTV into a 24×7 operational control system.",
   subheadline:
     "Our Surveillance Centre watches your sites around the clock. Every issue becomes a tracked incident management can act on.",
@@ -29,7 +28,6 @@ export const hero = {
 
 export const blindSpot = {
   id: "blind-spot",
-  eyebrow: "The management blind spot",
   headline: ["Your managers can’t be everywhere.", "Your cameras already are."],
   points: [
     { lead: "Cameras cover every site,", body: "day and night." },
@@ -41,7 +39,6 @@ export const blindSpot = {
     // Illustration only, not a claim about any customer's estate.
     sites: 4,
     camerasPerSite: 24,
-    caption: "Illustration: 4 sites, 96 cameras, one manager’s attention.",
   },
 };
 
@@ -49,7 +46,6 @@ export const blindSpot = {
 // value-added layer for measurement. Keep this split prominent.
 export const whatItSees = {
   id: "what-it-sees",
-  eyebrow: "What Promind 360 sees",
   headline: "Trained eyes on every feed.",
   body: "Our operators know what normal looks like at your sites, so they spot what isn’t.",
   roles: [
@@ -77,6 +73,10 @@ export const whatItSees = {
         { title: "People analytics", detail: "Headcount, footfall, occupancy and heatmaps" },
         { title: "Vehicle analytics", detail: "ANPR, vehicle counting and overspeeding detection" },
         { title: "Zone analytics", detail: "Active-zone mapping, dwell time and utilisation" },
+        { title: "Crowd analytics", detail: "Density, congestion and gathering thresholds" },
+        { title: "Queue analytics", detail: "Queue length, wait times and service bottlenecks" },
+        { title: "Movement analytics", detail: "Line crossing, direction and movement patterns" },
+        { title: "Object analytics", detail: "Unattended and removed-object detection" },
       ],
     },
   ],
@@ -86,7 +86,6 @@ export const whatItSees = {
 
 export const operatingModel = {
   id: "operating-model",
-  eyebrow: "How the service is built",
   headline: "Trained operators at the core.",
   body: "The Surveillance Centre is the service. The platform records every incident. AI analytics is an optional add-on.",
   source: { label: "Your CCTV", body: "Live feeds from every site" },
@@ -101,7 +100,11 @@ export const operatingModel = {
       key: "platform",
       label: "Accountability",
       role: "Incident platform",
-      body: "Every observation is logged, assigned, escalated and tracked.",
+      body: "Every observation is logged, assigned and escalated.",
+      highlights: [
+        { icon: "bell", text: "Automated alerts" },
+        { icon: "userCheck", text: "Tracked to closure" },
+      ],
     },
   ],
   addOn: {
@@ -121,21 +124,19 @@ export const operatingModel = {
 // `optional: true` for steps that only apply in some deployments.
 export const workflow = {
   id: "how-it-works",
-  eyebrow: "How it works",
   headline: "From camera feed to closed incident.",
   body: "One process, every site, every shift.",
   stages: [
     { title: "Camera onboarding", body: "We connect to your existing cameras and agree what to watch at each site.", lane: "client" },
     { title: "Monitoring", body: "Our Surveillance Centre watches your feeds 24×7.", lane: "centre" },
     { title: "Verification & incident", body: "Every issue is verified and logged with the evidence frame.", lane: "centre" },
-    { title: "Escalation & assignment", body: "The right person is alerted and owns the incident.", lane: "platform" },
-    { title: "Resolution & reporting", body: "Closed incidents feed your site reports and dashboards.", lane: "platform" },
+    { title: "Automated alert & assignment", body: "The right person is alerted immediately and owns the incident.", lane: "platform" },
+    { title: "Tracked closure & reporting", body: "Every incident is followed through resolution, then added to site reports and dashboards.", lane: "platform" },
   ],
 };
 
 export const platform = {
   id: "platform",
-  eyebrow: "The platform",
   headline: "Your operational command center.",
   body: "Every incident in one place, with the evidence.",
   callouts: [
@@ -152,7 +153,6 @@ export const platform = {
 
 export const health = {
   id: "health-check",
-  eyebrow: "Health check & alerts",
   headline: "Know the moment a camera goes dark.",
   body: "We track camera and DVR uptime around the clock and tell you when anything goes down.",
   points: [
@@ -167,7 +167,6 @@ export const health = {
 // stored, certifications) before adding them here.
 export const security = {
   id: "security",
-  eyebrow: "Data security & privacy",
   headline: "Your footage stays yours.",
   points: [
     { icon: "lock", title: "Restricted access", body: "Feeds and records visible only to authorised users." },
@@ -178,7 +177,6 @@ export const security = {
 
 export const multiSiteSection = {
   id: "multi-site",
-  eyebrow: "Multi-site control",
   headline: "One view across every location.",
   body: "Incidents, open issues and trends from every site, in one place.",
   points: [
@@ -191,7 +189,6 @@ export const multiSiteSection = {
 
 export const businessCase = {
   id: "business-case",
-  eyebrow: "The benefits",
   headline: "Tighter operations. More reach for every manager.",
   comparison: {
     columns: ["Typical oversight", "With Promind 360"],
@@ -227,7 +224,6 @@ export const businessCase = {
 // `source` (optional): "human" (Surveillance Centre) or "ai" (AI analytics).
 export const solutions = {
   id: "solutions",
-  eyebrow: "Industries",
   headline: "Use cases for your industry.",
   body: "Choose an industry to see what we watch for.",
   disclaimer: "These industries and use cases are examples, not an exhaustive list. Tell us about your sites and we’ll map what applies.",
@@ -317,13 +313,37 @@ export const solutions = {
 
 export const proof = {
   id: "proof",
-  eyebrow: "Case studies",
   headline: "Proof from live operations.",
   // Used for the heading and nav link while no case study is published.
-  withoutCaseStudy: { eyebrow: "Clients", headline: "Trusted in live operations.", navLabel: "Clients" },
-  // TODO(content): approved customer logos (SVG preferred) with written
-  // permission to display. Shape: { name, src, width, height }.
-  logos: Array.from({ length: 6 }, (_, i) => ({ placeholder: true, name: `Customer logo ${i + 1}` })),
+  withoutCaseStudy: { headline: "Trusted in live operations.", navLabel: "Clients" },
+  logoLabel: "Clients featured by ProMind Solutions",
+  logoSource: { label: "Source: promindsolutions.com", href: "https://www.promindsolutions.com/" },
+  // Publicly displayed on the official ProMind Solutions website. These are
+  // group-level clients, so they are not presented as Promind 360 customers.
+  logos: [
+    { name: "Tata", src: "/assets/clients/tata.jpg", width: 300, height: 200, featured: false },
+    { name: "Cadbury", src: "/assets/clients/cadbury.png", width: 300, height: 200, featured: false },
+    { name: "Paytm", src: "/assets/clients/paytm.jpg", width: 300, height: 200, featured: false },
+    { name: "UPES", src: "/assets/clients/upes.jpg", width: 300, height: 200, featured: false },
+    { name: "Nestlé", src: "/assets/clients/nestle.jpg", width: 300, height: 200, featured: false },
+    { name: "IIM Lucknow", src: "/assets/clients/iim-lucknow.jpg", width: 300, height: 200, featured: false },
+    { name: "The Doon School", src: "/assets/clients/doon-school.jpg", width: 300, height: 200, featured: false },
+    { name: "BML Munjal University", src: "/assets/clients/bml-munjal.jpg", width: 300, height: 200, featured: false },
+    { name: "Rajiv Gandhi International Airport, Hyderabad", src: "/assets/clients/hyderabad.jpg", width: 300, height: 200, featured: false },
+    { name: "Indira Gandhi International Airport, Delhi", src: "/assets/clients/delhi.jpg", width: 300, height: 200, featured: false },
+    { name: "GMR", src: "/assets/clients/gmr.jpg", width: 300, height: 200, featured: false },
+    { name: "Hero", src: "/assets/clients/hero.jpg", width: 300, height: 200, featured: false },
+    { name: "Bosch", src: "/assets/clients/bosch.jpg", width: 300, height: 200, featured: false },
+    { name: "Minda", src: "/assets/clients/minda.jpg", width: 300, height: 200, featured: false },
+    { name: "Maruti Suzuki", src: "/assets/clients/maruti-suzuki.jpg", width: 300, height: 200, featured: false },
+    { name: "TVS", src: "/assets/clients/tvs.jpg", width: 300, height: 200, featured: false },
+    { name: "Hindustan Unilever", src: "/assets/clients/hindustan-unilever.jpg", width: 300, height: 200, featured: false },
+    { name: "Income Tax Department", src: "/assets/clients/itd.jpg", width: 300, height: 200, featured: false },
+    { name: "Aadhaar", src: "/assets/clients/aadhaar.jpg", width: 300, height: 200, featured: false },
+    { name: "BHEL", src: "/assets/clients/bhel.jpg", width: 300, height: 200, featured: false },
+    { name: "Larsen & Toubro", src: "/assets/clients/lt.jpg", width: 300, height: 200, featured: false },
+    { name: "Bharat Petroleum", src: "/assets/clients/bharat-petroleum.jpg", width: 300, height: 200, featured: false },
+  ],
   // TODO(content): approved figures only.
   metrics: [
     { placeholder: true, value: "TBC", label: "Sites monitored" },
@@ -353,7 +373,6 @@ export const proof = {
 
 export const about = {
   id: "about",
-  eyebrow: "About Promind",
   headline: "Built on real operational experience.",
   body: "Backed by ProMind Solutions: 15+ years running facilities, manpower and warehousing operations for private and public sector clients.",
   // Figures from promindsolutions.com (About page) and the previous website.
@@ -366,7 +385,13 @@ export const about = {
     { value: "ISO 27001 & ISO 22301", label: "Certified" },
     { value: "Zero-debt", label: "Group" },
   ],
-  visual: { placeholder: true, label: "Promind credibility visual (operations, workforce, footprint)" },
+  logo: {
+    src: "/assets/prologo.png",
+    alt: "ProMind Solutions, Full Service Management",
+    width: 1100,
+    height: 550,
+    href: "https://www.promindsolutions.com/",
+  },
 };
 
 export const finalCta = {

@@ -187,11 +187,11 @@ export const deviceHealth = {
     { label: "Open alerts", value: "2", tone: "critical" },
   ],
   devices: [
-    { name: "DVR 01", site: "Site 01", kind: "server", status: "online", uptime: "99.9%", days: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] },
-    { name: "CAM 07", site: "Site 01", kind: "camera", status: "online", uptime: "99.6%", days: [1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1] },
-    { name: "DVR 03", site: "Site 04", kind: "server", status: "offline", uptime: "97.8%", days: [1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0] },
-    { name: "CAM 19", site: "Site 02", kind: "camera", status: "online", uptime: "98.9%", days: [1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1] },
-    { name: "CAM 12", site: "Site 04", kind: "camera", status: "offline", uptime: "98.1%", days: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0] },
+    { name: "DVR 01", site: "Site 01", kind: "server", status: "online", uptime: "99.9%", onTime: "13d 23h", days: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] },
+    { name: "CAM 07", site: "Site 01", kind: "camera", status: "online", uptime: "99.6%", onTime: "13d 22h", days: [1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1] },
+    { name: "DVR 03", site: "Site 04", kind: "server", status: "offline", uptime: "97.8%", onTime: "13d 16h", days: [1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0] },
+    { name: "CAM 19", site: "Site 02", kind: "camera", status: "online", uptime: "98.9%", onTime: "13d 20h", days: [1, 1, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1] },
+    { name: "CAM 12", site: "Site 04", kind: "camera", status: "offline", uptime: "98.1%", onTime: "13d 17h", days: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0] },
   ],
   alert: {
     title: "DVR 03 offline",

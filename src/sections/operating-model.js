@@ -13,6 +13,9 @@ const node = (part) => html`<div class="model__node model__node--${part.key}">
   <p class="model__label">${icon(ICONS[part.key], { size: 16 })}<span>${part.label}</span></p>
   <p class="model__role">${part.role}</p>
   <p class="model__body">${part.body}</p>
+  ${part.highlights && html`<ul class="model__highlights">
+    ${part.highlights.map((item) => html`<li>${icon(item.icon, { size: 16 })}<strong>${item.text}</strong></li>`)}
+  </ul>`}
 </div>`;
 
 const connector = html`<span class="model__link" aria-hidden="true"><span></span></span>`;
@@ -21,7 +24,7 @@ export function operatingModelSection() {
   const [centre, platform] = m.core;
   return html`<section class="section model-section" id="${m.id}" aria-labelledby="${m.id}-title">
     <div class="container">
-      ${sectionHead({ eyebrow: m.eyebrow, headline: m.headline, body: m.body, align: "center", id: `${m.id}-title` })}
+      ${sectionHead({ headline: m.headline, body: m.body, align: "center", id: `${m.id}-title` })}
       <div class="model">
         <div class="model__end model__end--source">
           ${icon("camera", { size: 22 })}

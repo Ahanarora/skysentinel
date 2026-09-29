@@ -99,7 +99,7 @@ export function commandCenterSection() {
   return html`<section class="section section--tint platform-section" id="${p.id}" aria-labelledby="${p.id}-title">
     <div class="container">
       <div class="platform-section__head">
-        ${sectionHead({ eyebrow: p.eyebrow, headline: p.headline, body: p.body, id: `${p.id}-title` })}
+        ${sectionHead({ headline: p.headline, body: p.body, id: `${p.id}-title` })}
         <ol class="callouts">
           ${p.callouts.map(
             (c) => html`<li class="callout"><span class="app-marker" aria-hidden="true">${c.n}</span><div><h3>${c.title}</h3><p>${c.body}</p></div></li>`

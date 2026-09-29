@@ -16,7 +16,6 @@ export function workflowSection() {
   return html`<section class="section workflow-section" id="${w.id}" aria-labelledby="${w.id}-title">
     <div class="container">
       ${sectionHead({
-        eyebrow: w.eyebrow,
         headline: w.headline,
         body: ready ? w.body : "We’ll walk you through the operating process for your sites in a demo.",
         id: `${w.id}-title`,

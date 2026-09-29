@@ -172,41 +172,6 @@ main:focus {
 
 /* Typography helpers ------------------------------------------------------- */
 
-/* Section labels ("The management blind spot"). A tinted pill so they read
-   clearly as the first thing in each section. */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-bottom: var(--space-5);
-  padding: 0.45rem 0.95rem;
-  border: 1px solid var(--brand-100);
-  border-radius: 999px;
-  background: var(--brand-50);
-  font-size: clamp(0.875rem, 0.82rem + 0.25vw, 1rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--brand-700);
-}
-
-.eyebrow::before {
-  content: "";
-  flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: currentColor;
-}
-
-.section--dark .eyebrow,
-.hero .eyebrow {
-  border-color: rgb(82 192 139 / 0.35);
-  background: rgb(82 192 139 / 0.12);
-  color: var(--brand-300);
-}
-
 .section-head {
   max-width: 44rem;
 }

@@ -55,7 +55,7 @@ export function multiSiteSectionView() {
   return html`<section class="section section--dark ms-section" id="${m.id}" aria-labelledby="${m.id}-title">
     <div class="container">
       <div class="ms-section__head">
-        ${sectionHead({ eyebrow: m.eyebrow, headline: m.headline, body: m.body, id: `${m.id}-title` })}
+        ${sectionHead({ headline: m.headline, body: m.body, id: `${m.id}-title` })}
         <ul class="ms-points">
           ${m.points.map((pt) => html`<li><h3>${pt.title}</h3><p>${pt.body}</p></li>`)}
         </ul>

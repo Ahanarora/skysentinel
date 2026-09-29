@@ -58,7 +58,6 @@ export function solutionsSection() {
   return html`<section class="section section--tint solutions-section" id="${s.id}" aria-labelledby="${s.id}-title">
     <div class="container">
       ${sectionHead({
-        eyebrow: s.eyebrow,
         headline: s.headline,
         body: industries.length ? s.body : "Tell us about your sites and we’ll show you the use cases that apply.",
         id: `${s.id}-title`,

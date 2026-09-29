@@ -61,7 +61,7 @@ function costVisual() {
 export function businessCaseSection() {
   return html`<section class="section business-section" id="${b.id}" aria-labelledby="${b.id}-title">
     <div class="container">
-      ${sectionHead({ eyebrow: b.eyebrow, headline: b.headline, id: `${b.id}-title` })}
+      ${sectionHead({ headline: b.headline, id: `${b.id}-title` })}
       ${comparison()}
 
       <ul class="benefits">

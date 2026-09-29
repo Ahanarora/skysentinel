@@ -45,12 +45,6 @@
   max-width: 38rem;
 }
 
-/* The hero label is a three-part descriptor, so it runs a little smaller. */
-.hero .eyebrow {
-  font-size: var(--fs-xs);
-  letter-spacing: 0.05em;
-}
-
 .hero__title {
   font-size: var(--fs-display);
   font-weight: 600;
@@ -618,7 +612,7 @@
   color: var(--accent);
 }
 
-.role__eq {
+.role__arrow {
   font-weight: 400;
   opacity: 0.7;
 }
@@ -1151,6 +1145,29 @@
   margin-top: var(--space-3);
   font-size: var(--fs-small);
   color: var(--text-2);
+}
+
+.model__highlights {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.model__highlights li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.6rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--brand-500) 28%, var(--line));
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--brand-500) 8%, var(--paper));
+  font-size: var(--fs-small);
+  color: var(--text);
+}
+
+.model__highlights .icon {
+  flex-shrink: 0;
+  color: var(--brand-500);
 }
 
 /* 5 · Workflow ---------------------------------------------------------------- */
@@ -1913,10 +1930,6 @@
   border-radius: 16px;
   background: var(--ink-900);
   color: var(--brand-300);
-}
-
-.security .eyebrow {
-  margin-bottom: var(--space-3);
 }
 
 .security__title {
@@ -2855,9 +2868,43 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  margin-bottom: var(--space-4);
   font-size: var(--fs-small);
   color: var(--text-3);
+}
+
+.proof-logos__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.proof-logos__head a {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.proof-logos .logo-row li {
+  display: grid;
+  min-height: 92px;
+  place-items: center;
+  padding: var(--space-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.proof-logos .logo-row img {
+  width: 100%;
+  height: 72px;
+  max-height: none;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.82;
 }
 
 .metrics {
@@ -2908,10 +2955,6 @@
   padding: clamp(1.5rem, 3vw, 2.5rem);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-}
-
-.case .eyebrow {
-  margin-bottom: var(--space-3);
 }
 
 .case__customer {
@@ -3050,6 +3093,22 @@
   color: var(--text-2);
 }
 
+.about-section__brand {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-section__brand img {
+  width: min(100%, 520px);
+  height: auto;
+}
+
 /* 14 · Final CTA -------------------------------------------------------------- */
 
 .final-cta {
@@ -3101,4 +3160,3 @@
 .final-cta__contact a:hover {
   color: var(--text-on-dark);
 }
-

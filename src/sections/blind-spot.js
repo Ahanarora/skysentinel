@@ -17,7 +17,7 @@ export function blindSpotSection() {
     <div class="container">
       <div class="blindspot__grid">
         <div class="blindspot__copy">
-          ${sectionHead({ eyebrow: blindSpot.eyebrow, headline: blindSpot.headline, id: `${blindSpot.id}-title` })}
+          ${sectionHead({ headline: blindSpot.headline, id: `${blindSpot.id}-title` })}
           <ol class="blindspot__points">
             ${blindSpot.points.map(
               (p, i) => html`<li><span class="blindspot__n">${String(i + 1).padStart(2, "0")}</span><p><strong>${p.lead}</strong> ${p.body}</p></li>`
@@ -51,7 +51,6 @@ export function blindSpotSection() {
               <span class="bs__toggle-play">${icon("play", { size: 14 })}Play</span>
             </button>
           </div>
-          <figcaption class="bs__caption">${visual.caption}</figcaption>
         </figure>
       </div>
       <p class="blindspot__conclusion">${blindSpot.conclusion}</p>

@@ -34,8 +34,8 @@ function panel() {
       <ul class="hc__list">
         ${devices.map(
           (d) => html`<li class="${cx("hc__row", `hc__row--${d.status}`)}">
-            <span class="hc__device">${icon(d.kind, { size: 16 })}<span><strong>${d.name}</strong><small>${d.site}</small></span></span>
-            ${uptimeBars(d.days, `${d.name}, last 14 days`)}
+            <span class="hc__device">${icon(d.kind, { size: 16 })}<span><strong>${d.name}</strong><small>${d.site} · ${d.onTime} on</small></span></span>
+            ${uptimeBars(d.days, `${d.name}, last 14 days: ${d.onTime} on`)}
             <span class="hc__uptime">${d.uptime}</span>
             <span class="hc__status">${d.status === "online" ? "Online" : "Offline"}</span>
           </li>`
@@ -59,7 +59,7 @@ export function healthSection() {
   return html`<section class="section health-section" id="${h.id}" aria-labelledby="${h.id}-title">
     <div class="container health-section__grid">
       <div>
-        ${sectionHead({ eyebrow: h.eyebrow, headline: h.headline, body: h.body, id: `${h.id}-title` })}
+        ${sectionHead({ headline: h.headline, body: h.body, id: `${h.id}-title` })}
         <ul class="feature-list">
           ${h.points.map(
             (p) => html`<li><span class="feature-list__icon">${icon(p.icon, { size: 20 })}</span><div><h3>${p.title}</h3><p>${p.body}</p></div></li>`
@@ -80,7 +80,6 @@ export function securitySection() {
       <div class="security__head">
         <span class="security__badge">${icon("shield", { size: 28 })}</span>
         <div>
-          <p class="eyebrow">${sec.eyebrow}</p>
           <h2 class="security__title" id="${sec.id}-title">${sec.headline}</h2>
         </div>
       </div>

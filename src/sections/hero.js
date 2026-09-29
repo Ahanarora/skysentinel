@@ -7,12 +7,11 @@ import { consoleVisual } from "../components/console.js";
 
 export function heroSection() {
   // The hero logo strip only appears once real, approved logos exist.
-  const logos = proof.logos.filter((l) => !l.placeholder && l.src);
+  const logos = proof.logos.filter((l) => !l.placeholder && l.src && l.featured !== false);
 
   return html`<section class="hero" aria-labelledby="hero-title">
     <div class="container hero__grid">
       <div class="hero__copy">
-        <p class="eyebrow">${hero.eyebrow}</p>
         <h1 class="hero__title" id="hero-title">${hero.headline}</h1>
         <p class="hero__sub">${hero.subheadline}</p>
         <div class="hero__actions">
